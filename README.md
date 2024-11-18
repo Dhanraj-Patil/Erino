@@ -27,3 +27,4 @@ cd frontend/frontend
 npm install
 npm run dev
 ```
+- You can now view the project on `http://localhost:5173/`

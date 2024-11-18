@@ -142,6 +142,7 @@ function App() {
   };
 
   const handleChangePage = (e: unknown, newPage: number) => {
+    console.log(e);
     setPage(newPage);
   };
 

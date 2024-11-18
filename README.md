@@ -20,7 +20,7 @@ npm run dev
 ## Frontend
 - From the main directory go to the frontend folder.
 ```bash
-cd frontend
+cd frontend/frontend
 ```
 - Install dependencies and run the project.
 ```npm

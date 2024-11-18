@@ -9,10 +9,19 @@ import {
 } from "@mui/material";
 import axios from "../axios";
 
+interface Contact {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  company: string;
+  jobTitle: string;
+}
+
 interface Prop {
   edit: boolean;
   setEdit: Function;
-  contact: Object;
+  contact: Contact;
   getContact: Function;
 }
 

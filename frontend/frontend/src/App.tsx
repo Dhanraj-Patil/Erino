@@ -16,13 +16,28 @@ import Contact from "./components/contact";
 import axios from "./axios";
 import UpdateContact from "./components/updateContact";
 
+interface Rows {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  company: string;
+  jobTitle: string;
+}
+
 function App() {
-  const [count, setCount] = useState(0);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [open, setOpen] = useState(false);
   const [edit, setEdit] = useState(false);
-  const [update, setUpdate] = useState({});
+  const [update, setUpdate] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    company: "",
+    jobTitle: "",
+  });
 
   // const data = [
   //   {
@@ -121,7 +136,7 @@ function App() {
       .catch((error) => console.error(error));
   };
 
-  const handleUpdate = (contact: Object) => {
+  const handleUpdate = (contact: Rows) => {
     setUpdate(contact);
     setEdit(true);
   };
@@ -174,9 +189,9 @@ function App() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {visibleRows.map((row) => (
+              {visibleRows.map((row: Rows, index) => (
                 <TableRow
-                  key={row.email}
+                  key={index}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell component="th" scope="row">

@@ -4,7 +4,9 @@ const ContactSchema = require("../model/contact");
 
 const main = async () => {
   console.log(process.env.MONGO);
-  await mongoose.connect(process.env.MONGO);
+  await mongoose.connect(process.env.MONGO, {
+    socketTimeoutMS: 10000,
+  });
   console.log("Successfully connected to MongoDB");
 };
 

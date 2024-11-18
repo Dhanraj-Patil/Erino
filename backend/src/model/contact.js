@@ -1,22 +1,20 @@
 const { Schema, mongo } = require("mongoose");
 
 const Contact = new Schema({
-  _id: {
-    type: mongo.ObjectId,
-    default: new mongo.ObjectId(),
-  },
   firstName: String,
   lastName: String,
   email: {
-    unique: true,
     type: String,
+    required: true,
+    unique: true,
   },
   phone: {
-    unique: true,
     type: String,
+    required: true,
+    unique: true,
   },
   company: String,
   jobTitle: String,
 });
 
-module.exports = { Contact };
+module.exports = Contact;
